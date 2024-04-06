@@ -1,0 +1,46 @@
+.vid-img {
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+    background-color: brown;
+    background-image: url("../assets/videoo.jpeg");
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.vid-image {
+    width: 100%;
+    height: 100%;
+}
+
+
+#det {
+    color: var(--primary-brown);
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.port {
+    height: 90%;
+    overflow: scroll;
+}
+
+.more {
+    /* height: auto;
+    width: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

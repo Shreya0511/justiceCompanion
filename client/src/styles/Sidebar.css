@@ -1,0 +1,93 @@
+.side-bar-parent {
+    height: 100%;
+    padding: 1rem;
+    padding-right: 1.5rem;
+    min-width: 200px;
+    overflow-y: scroll;
+    border-right: 1px solid #685e5e;
+}
+
+.side-bar {
+    background-color: #141414;
+    height: 100%;
+    min-width: 15rem;
+    z-index: 50;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-top: 4%;
+    border-right: 1px solid #685e5e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.side-bar-parent::-webkit-scrollbar {
+    display: none;
+}
+
+
+.side-bar ul {
+    /* padding: ; */
+    margin: 0;
+    /* padding-left: 0; */
+    padding: 10px 4px;
+    margin-top: 15%;
+    list-style: none;
+    /* margin : auto; */
+    margin-right: 1.1rem;
+}
+
+.side-bar ul li {
+    margin: 0;
+
+}
+
+.side-bar-buttons {
+    display: flex;
+    padding: 10px;
+    /* background-color: var(--bgtransparentmax); */
+    margin: 0;
+
+    width: 100%;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    justify-content: left;
+}
+
+.side-bar-buttons:hover {
+    color: white;
+}
+
+.side-bar-icon {
+    margin-right: 15px;
+}
+
+.inactive button {
+    color: #968585;
+}
+
+.active button {
+    background-color: var(--bgtransparentmax);
+}
+
+.side-bar-logout {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    justify-content: left;
+    margin: 0;
+}
+
+.side-bar-logout {
+    text-decoration: none;
+    padding: 0 4px;
+    color: #8f8585;
+}
+
+.side-bar-logout button {
+    color: #8f8585;
+}

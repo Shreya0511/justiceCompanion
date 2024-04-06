@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../public/stylesheets/indexStyles.css">
+</head>
+<body>
+    <form action = "" method = "post">
+        <div className = "resetPassword_div" >
+            <div className = "Reset_Password_head">Reset Password</div>
+         <div className = "labelPassword">
+            <label>Enter your new Password.</label>
+         </div>
+         <div className = "boxPassword">
+             <input type = "password" name = "password" id = "password" /><br/>
+         </div>
+         <div className = "labelCnfPw">
+            <label>Confirm Password</label>
+         </div>
+         <div className = "boxCnfPw">
+             <input type = "password" name="passwordConfirm" id = "confirmPassword" /><br/>
+         </div>
+        <input type = "submit" value = "submit" />
+    </div>
+
+    </form>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header_loginRedirection'); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h3>Congraulations!! You have successfully changed your password.</h3>
+    <p>Please login again to Themesis Guardian through the link given below.</p>
+    <a class="text-primary font-weight-bold font-italic" href="http://localhost:3000/login">Themesis Guardian Login</a>
+  </div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

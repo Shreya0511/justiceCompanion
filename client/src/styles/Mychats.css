@@ -1,0 +1,13 @@
+.fontAwesome {
+    font-family: 'Helvetica', FontAwesome, sans-serif;
+}
+
+.mainMyChats{
+    height : 90vh;
+    overflow-y :  scroll;
+    /* color : rgb(245, 203, 141); */
+}
+
+.mainMyChats::-webkit-scrollbar{
+    display : none;
+}

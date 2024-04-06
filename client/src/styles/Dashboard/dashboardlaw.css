@@ -1,0 +1,94 @@
+<<<<<<< HEAD
+=======
+.App {
+   /* /// background-color: #000; */
+    background-image: url(../assets/bg.jpg);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-position: 8vw -20vh;
+    background-size: 80vw 190vh;
+    overflow: hidden;
+    color: var(--white);
+    
+  }
+  
+  /* ::-webkit-scrollbar {
+    display: none;
+  } */
+  
+  .initial {
+    color: var(--primary-brown);
+  }
+  
+  .styled-text {
+    font-family: var(--font-extra);
+  }
+  
+  .hide-element {
+    display: none;
+  }
+  
+  .chat-bot-icon-container {
+    position: fixed;
+    bottom: 8vh;
+    right: 4vw;
+    background-color: var(--primary-brown);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .chat-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: var(--black);
+  }
+  
+  .not-found-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  
+  .outer-container{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  .left-container{
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .right-container{
+    height: 100%;
+    width: 100rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* flex-grow: 1; */
+  }
+  
+  
+
+
+  .filler{
+    width: 10%;
+    height: 10%;
+    background-color: #10afa200;
+  }
+>>>>>>> 10dc7a1 (syncing changes)

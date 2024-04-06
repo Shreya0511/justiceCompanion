@@ -1,0 +1,187 @@
+.login-card {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 70%;
+    background-color: var(--bgtransparentmax);
+    border: 1px solid var(--black);
+    min-width: 368px;
+    min-height: 446px;
+    padding: 3%;
+}
+
+.register-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 80%;
+    min-width: 368px;
+    min-height: 600px;
+    background-color: var(--bgtransparentmax);
+    border: 1px solid var(--black);
+    /* padding: 2%; */
+    overflow-y : scroll;
+    /* margin-top: 4rem; */
+    
+
+}
+
+.login-title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.login-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    color: var(--offwhite);
+    padding: 0 10px 10px;
+    margin: 10px 10px 0;
+}
+
+.register-form .form-group {
+    margin: 0px 10px 0;
+}
+
+.form-group2 {
+    color: var(--offwhite);
+    margin: 0px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-group2 .input-label {
+    font-size: 1rem;
+}
+
+.form-input {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--white);
+}
+
+.label-wrapper {
+    height: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-label {
+
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--offwhite);
+
+}
+
+.form-input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--primary-brown);
+
+}
+
+input::placeholder{
+    color: var(--offwhite);
+
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--primary-brown);
+    margin: 5px;
+}
+
+.form-input{
+    color: var(--white);
+}
+.btn-wrapper {
+    width: 100%;
+    display: flex;
+}
+
+.btn-primary {
+    margin: 15px auto 0;
+    font-size: 1.5rem;
+}
+
+.available {
+    color: var(--green);
+}
+
+.unavailable {
+    color: var(--red);
+}
+
+select {
+
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bgtransparent);
+    border-radius: 4px;
+    color: var(--offwhite);
+}
+
+
+/* CAUTION: Internet Explorer hackery ahead */
+
+
+select::-ms-expand {
+    display: none;
+    /* Remove default arrow in Internet Explorer 10 and 11 */
+}
+
+/* Target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background: none\9;
+        padding: 5px\9;
+    }
+}
+
+select:focus {
+    outline: none;
+}
+
+.login-link {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.forgot-link {
+    font-size: 1.3rem;
+    color: var(--offwhite);
+}
+
+.acc-link {
+    font-size: 1.3rem;
+    color: var(--offwhite);
+    
+}

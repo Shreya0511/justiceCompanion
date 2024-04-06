@@ -1,0 +1,41 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .slider-container {
+    position: absolute;
+    top: 50%;
+    background-color: var(--bgtransparentmax);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+  }
+  
+  
+  .slider-card {
+  
+   
+    padding: 10px; 
+    border-radius: 5px;
+    text-align: center; 
+    display: inline-block; 
+  }
+  
+
+  .navigation {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+  }
+  
+  .navigation button {
+    padding: 10px 20px;
+    text-align: center;
+    color: antiquewhite;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  

@@ -1,0 +1,40 @@
+.articleMainContainer{
+    display : flex;
+    flex-direction: column;
+    padding : 1.5rem;
+    height : 100%;
+    overflow-y : scroll;
+
+}
+
+.articleMainContainer::-webkit-scrollbar{
+    display : none;
+}
+
+.articleContainer{
+    background-color: rgba(102, 101, 101, 0.5);
+    padding : 2rem;
+    border-radius: 1.3rem;
+    overflow-y : scroll;
+}
+
+.articleContainer::-webkit-scrollbar{
+    display : none;
+}
+
+.headingArticle{
+    display : flex;
+    align-items: center;
+    margin-top : 1.5rem;
+    justify-content: center;
+
+}
+
+.colTitle{
+    color : #c47741;
+    font-weight: bold;
+}
+
+.articleRow{
+    margin-bottom : 0.5rem;
+}

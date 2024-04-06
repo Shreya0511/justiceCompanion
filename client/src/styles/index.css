@@ -1,0 +1,21 @@
+:root {
+	--primary-brown: #C29879;
+	--white: #fff;
+	--offwhite: #c8afaf;
+	--black: #000;
+	--green: #00ff00;
+	--red: #ff0000;
+	--font-extra: 'Mea Culpa', cursive;
+	--font-normal: 'Poppins', sans-serif;
+	--bgtransparent: #6e6767ce;
+	--bgtransparent-two: rgba(131, 115, 115, 0.808);
+	--bgtransparentmax: #d7d3d338;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: var(--font-normal);
+	background-color: transparent;
+}

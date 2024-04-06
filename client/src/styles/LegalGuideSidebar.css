@@ -1,0 +1,51 @@
+.LegalGuideSideMain {
+  background-color: rgb(95, 93, 93, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideBarContainer {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 2rem;
+}
+
+.side-bar-parent {
+  width: auto;
+}
+
+.listItem {
+  margin-bottom: 1.2rem;
+  padding-left: 2.1rem;
+  color: #8f8585;
+}
+
+.dropdownItem {
+  /* margin-top: 0.5rem; */
+  text-decoration: none;
+  padding-left: 0.5rem;
+  color: #8f8585;
+  list-style: none;
+}
+
+.listIt{
+  color: #8f8585;
+  padding-left : 2.1rem;
+}
+
+.linkdrop {
+  text-decoration: none;
+}
+
+.articleActiv {
+  color: chocolate;
+  margin-bottom: 1.2rem;
+}
+
+.articleActv {
+  padding-left: 2.1rem;
+  color: chocolate;
+}

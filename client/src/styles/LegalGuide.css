@@ -1,0 +1,21 @@
+.legalGuideMainContainer{
+   display : flex;
+   flex-direction: column;
+}
+
+.legalGuideSidebar{
+    flex : 2;
+}
+
+.legalGuideContent{
+    flex : 4;
+}
+
+.searchContainer{
+    height : 100vh;
+    overflow-y : scroll;
+}
+
+.searchContainer::-webkit-scrollbar{
+    display : none;
+}

@@ -1,0 +1,87 @@
+.App {
+  background-color: #000;
+  background-image: url(../assets/bg.jpg);
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-position: 8vw -20vh;
+  background-size: 80vw 190vh;
+  overflow: hidden;
+  color: var(--white);
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.initial {
+  color: var(--primary-brown);
+}
+
+.styled-text {
+  font-family: var(--font-extra);
+}
+
+.hide-element {
+  display: none;
+}
+
+.chat-bot-icon-container {
+  position: fixed;
+  bottom: 8vh;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid rgb(184, 177, 177);
+  border-bottom: 1px solid rgb(182, 175, 175);
+  border-radius: 50% 0 0 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.chat-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  /* color: var(--primary-brown); */
+  margin: 0 10px;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+
+.outer-container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.left-container {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.right-container {
+  height: 100%;
+  width: 100rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* flex-grow: 1; */
+}

@@ -1,0 +1,24 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    perspective: 1000px;
+  }
+  
+  .rotate-image {
+    width: 200px; /* Initial size */
+    height: 300px; /* Initial size */
+    transition: transform 2s;
+  }
+  
+  .rotate-image:hover {
+    transform: rotateY(360deg);
+    width: 300px; /* Enlarge the image on hover */
+    height: 450px; /* Enlarge the image on hover */
+  }
+ 

@@ -1,0 +1,8 @@
+.active{
+   background-color: rgba(63, 61, 61, 0.8);
+   padding-right: 0px;
+   margin-right : 0px;
+}
+.inactive{
+    background-color: black;
+}

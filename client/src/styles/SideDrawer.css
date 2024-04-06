@@ -1,0 +1,15 @@
+.SidedrawerButton{
+    background-color : rgb(145, 142, 142, 0.5);
+    /* background-color: rgb(217, 178, 140); */
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    padding : 1rem;
+    /* padding-left: 1.3rem; */
+    /* padding : 1rem; */
+    /* height : 4rem;
+    width : 5rem; */
+    height : 2rem;
+    border-radius : 1.1rem;
+
+}

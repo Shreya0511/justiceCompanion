@@ -1,0 +1,9 @@
+.messageBox{
+    height : 58vh;
+    overflow-y : scroll;
+    position : relative;
+}
+
+.messageBox::-webkit-scrollbar{
+    display:none;
+}
