@@ -20,7 +20,7 @@ export const AuthWrapper = () => {
   let role = "user";
   const [isProtected, setProtected] = useState(false);
 
-  const [user, setUser] = useState({ user: "", isAuthenticated: false });
+  const [user, setUser] = useState({ user: "", isAuthenticated: null });
 
   const checkProtected = async () => {
     if (getCookies("jwt") === undefined) {
