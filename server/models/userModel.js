@@ -85,13 +85,6 @@ const userSchema = new mongoose.Schema(
           "Please Enter some important details about yourself...so that people can know you better!!",
         ],
       },
-      about: {
-        type: String,
-        // required: [
-        // 	true,
-        // 	"Please Enter some important details about yourself...so that people can know you better!!",
-        // ],
-      },
       feesCharged: {
         type: Number,
         required: [true, "Please Enter the Fees you Charge per case!!"],

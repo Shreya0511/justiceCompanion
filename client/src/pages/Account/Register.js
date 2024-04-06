@@ -41,13 +41,12 @@ function Register() {
     event.preventDefault();
 
     let userData = {
-	  name: name,
-	  email: userEmail,
-	  username: userName,
-	  password: userPassword,
-	  passwordConfirm: userCnfPass,
-	  role: userRole,
-
+      name: name,
+      email: userEmail,
+      username: userName,
+      password: userPassword,
+      passwordConfirm: userCnfPass,
+      role: userRole,
     };
 
     if (userData.role === "lawyer") {
@@ -67,37 +66,36 @@ function Register() {
         feesCharged: fees,
       };
 
-    //   try {
-        const response = await fetch(
-          "http://localhost:5001/api/v1/users/signup",
-          {
-            method: "post",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData),
+      //   try {
+      const response = await fetch(
+        "http://localhost:5001/api/v1/users/signup",
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data);
+          if (data.status === "fail") {
+            alert("Please fill the additional fields before submitting!!");
           }
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            // console.log(data);
-			if(data.status === "fail"){
-				alert("Please fill the additional fields before submitting!!");
-			}
-            if (data.status === "success") {
-              navigate("/login");
-			  alert(
-				`Congratulations ${userName} you are successfully registered with us. Please Login to Explore More!!`
-			  );
-            }
-          });
-    //   } catch (err) {
-    //     alert(
-    //       `Entered Email : ${userEmail} or Username: ${userName} is not available!! Please ensure that your Email and Username are Unique.`
-    //     );
-    //   }
-    }
-	 else {
+          if (data.status === "success") {
+            navigate("/login");
+            alert(
+              `Congratulations ${userName} you are successfully registered with us. Please Login to Explore More!!`
+            );
+          }
+        });
+      //   } catch (err) {
+      //     alert(
+      //       `Entered Email : ${userEmail} or Username: ${userName} is not available!! Please ensure that your Email and Username are Unique.`
+      //     );
+      //   }
+    } else {
       try {
         const response = await fetch(
           "http://localhost:5001/api/v1/users/signup",
@@ -286,7 +284,10 @@ function Register() {
                 keyboard={false}
                 style={{}}
               >
-                <Modal.Header closeButton style={{backgroundColor : "#938f8f99", color : "white"}}>
+                <Modal.Header
+                  closeButton
+                  style={{ backgroundColor: "#938f8f99", color: "white" }}
+                >
                   <Modal.Title>Additional Details</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -372,6 +373,16 @@ function Register() {
                       <Form.Control
                         placeholder="Let the world know who you are :)"
                         onChange={(e) => setAbout(e.target.value)}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formGridAddress1">
+                      <Form.Label>
+                        Add Document of Proof
+                        <span style={{ color: "red" }}>*</span>
+                      </Form.Label>
+                      <Form.Control
+                        type="file"
+                        placeholder="Share your Proof :)"
                       />
                     </Form.Group>
                   </Form>
