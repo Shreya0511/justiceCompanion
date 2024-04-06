@@ -177,7 +177,7 @@ const routes = [
 	{
 		path: "/myths",
 		component: <Myths />,
-		name: "Legal Mythbusters",
+		name: "Legal Myths",
 		isPrivate: true,
 		isMenuUser: true,
 		isMenuLawyer: false,
