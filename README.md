@@ -1,16 +1,7 @@
-**Themesis Guardian - An Online Web Application bridging the justice gap**	<br/> 
+**justiceCompanion - An Online Web Application bridging the justice gap**	<br/> 
 <br/>
-**Overview:** <br/>
-Themesis Guardian, aligned with the goal of promoting just, peaceful, and inclusive societies under 
-**SDG 16.3 - Promote the rule of law and ensure equal access to justice.** <br/>
-Our solution addresses the justice gap through an online website. A key feature is our chatbot, powered by Google's Gemini API, offering multilingual legal assistance, basic information, and directing users to relevant resources.
-Our primary targets are : 
-**SDG 16.3.1**, focusing on victim reports of crime. We aim to increase general awareness and responsibility through our knowledge base, including legal guides, past cases with feature based filter functionality, and resources. Users can connect directly with lawyers through our chat feature, request legal assistance, and file cases online through e-filing.
-Addressing **SDG 16.3.2** concerning unsentenced detainees, we provide a dedicated section offering knowledge of rights and legal support tailored to their needs.
-For **SDG 16.3.3**, promoting dispute resolution mechanisms, our platform includes a "Quick Fix Court" section. Here, lawyers can create temporary dispute resolution rooms to facilitate discussions and resolve minor disputes, discouraging direct communication between parties.
-Additionally, our platform features "Peer Connect," a community server enabling users to discuss problems with one another online.
 
- **Background:** <br/>
+ **Problem Statement:** <br/>
 The current legal system often feels fortresslike, overwhelming and impenetrable. Lack of legal knowledge, complex procedures and cost overruns present insurmountable barriers for millions of people. This uneven distribution of legal resources creates injustice, privileges the vulnerable, and undermines the foundations of a just society.
 
 This project aims to establish a comprehensive platform that empowers individuals and communities to navigate legal matters efficiently and affordably. It seeks to achieve this by:
