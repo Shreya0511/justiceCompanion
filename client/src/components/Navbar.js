@@ -5,25 +5,11 @@ import "../styles/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { AuthData } from "../services/AuthService";
-// import routes from "../routes/Routes";
 import "../styles/Sidebar.css";
 function Navbar() {
   const [profileSec, setProfileSec] = useState(false);
-  // const handleProfile = () => {
-  //   if (profileSec == false) {
-  //     setProfileSec(true);
-  //   } else {
-  //     setProfileSec(false);
-  //   }
-
-  //   if (setProfileSec == true) {
-  //     return <div className="profile_div"></div>;
-  //   }
-  // };
   const { showSidebar, toggleSidebar } = AuthData();
   const { user } = AuthData();
-  // console.log(showSidebar);
-  // console.log(JSON.parse(user.user));
   return (
     <div className="Navbar">
       <div className={showSidebar ? "top-nav" : "top-nav"}>
@@ -40,10 +26,10 @@ function Navbar() {
           >
             <FontAwesomeIcon icon={faX} />
           </span>
-          <span className="initial login-txt">T</span>
-          <span className="login-txt">hemesis </span>
-          <span className="initial login-txt">G</span>
-          <span className="login-txt">uardian</span>
+          {/* <span className="initial login-txt">T</span> */}
+          <span className="login-txt">justice</span>
+          <span className="initial login-txt">C</span>
+          <span className="login-txt">ompanion</span>
         </div>
         {user.isAuthenticated && (
               <Link to="/me" className="nav-link links">

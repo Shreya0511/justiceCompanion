@@ -57,8 +57,8 @@ function LegalGuideSidebar() {
 
       <>
       <NavLink to = "/dashboard" style ={{textDecoration: "none", color : "white"}}> <div className="profile-dashboard-heading">
-          <span className="prominent_letter">T</span>hemesis{" "}
-          <span className="prominent_letter">G</span>uardian
+          <span style ={{display : "flex", justifyContent : "center", alignItems : "center"}}><span class = "prominent_letter">j</span>ustice</span>{" "}
+          <span className="prominent_letter">C</span>ompanion
         </div>
         </NavLink> 
         <ul className="sideBarContainer">
