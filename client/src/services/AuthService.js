@@ -20,50 +20,46 @@ export const AuthWrapper = () => {
   let role = "user";
   const [isProtected, setProtected] = useState(false);
 
-  const [user, setUser] = useState({user : "", isAuthenticated: false});
+  const [user, setUser] = useState({ user: "", isAuthenticated: false });
 
-
-
-  const checkProtected = async() => {
-    
-    if(getCookies("jwt") === undefined){
-      setUser({user : "", isAuthenticated: false});
+  const checkProtected = async () => {
+    if (getCookies("jwt") === undefined) {
+      setUser({ user: "", isAuthenticated: false });
       return;
     }
     let userData = {
       jwt: getCookies("jwt"),
-    }
+    };
 
-    try{
-    const response = await fetch("http://127.0.0.1:5001/api/v1/users/isLoggedIn", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if(data.status === 'success'){
-        setUser({user : JSON.stringify(data.data), isAuthenticated: true});
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVER}/api/v1/users/isLoggedIn`,
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
         }
-      });
-    }catch(err){
-
-    }
-  }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "success") {
+            setUser({ user: JSON.stringify(data.data), isAuthenticated: true });
+          }
+        });
+    } catch (err) {}
+  };
 
   const [selectedChat, setSelectedChat] = useState([]);
   const [chats, setChats] = useState([]);
-
-  
 
   const updateMe = async (userDetails) => {
     let userData = userDetails;
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5001/api/v1/users/updateMe",
+        `${process.env.REACT_APP_SERVER}/api/v1/users/updateMe`,
         {
           method: "PATCH",
           headers: {
@@ -100,7 +96,7 @@ export const AuthWrapper = () => {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5001/api/v1/users/updatePassword",
+        `${process.env.REACT_APP_SERVER}/api/v1/users/updatePassword`,
         {
           method: "PATCH",
           headers: {
@@ -117,7 +113,10 @@ export const AuthWrapper = () => {
       )
         .then((response) => response.json())
         .then((data) => {
-          setUser({user: JSON.stringify(data.data.user), isAuthenticated: true})
+          setUser({
+            user: JSON.stringify(data.data.user),
+            isAuthenticated: true,
+          });
           alert(
             "Congratulations!! You have succesfully changed your details..."
           );
@@ -136,13 +135,16 @@ export const AuthWrapper = () => {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/api/v1/users/login", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      })
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVER}/api/v1/users/login`,
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        }
+      )
         .then((response) => response.json())
         .then((data) => {
           return new Promise((resolve, reject) => {
@@ -180,7 +182,7 @@ export const AuthWrapper = () => {
 
   const logout = async () => {
     removeCookies("jwt");
-    setUser({"user": "", "isAuthenticated": false});
+    setUser({ user: "", isAuthenticated: false });
     // let userData = {
     //   jwt: getCookies("jwt"),
     // };
@@ -298,7 +300,10 @@ export const AuthWrapper = () => {
   }
 
   if (
-    window.location.pathname === "/guide" || window.location.pathname === `/guide/article/${localStorage.getItem("Index")}` || window.location.pathname === "/guide/article/0"
+    window.location.pathname === "/guide" ||
+    window.location.pathname ===
+      `/guide/article/${localStorage.getItem("Index")}` ||
+    window.location.pathname === "/guide/article/0"
   ) {
     return (
       <AuthContext.Provider
@@ -328,9 +333,7 @@ export const AuthWrapper = () => {
         </div>
       </AuthContext.Provider>
     );
-  }
-  
-  else {
+  } else {
     return (
       <AuthContext.Provider
         value={{

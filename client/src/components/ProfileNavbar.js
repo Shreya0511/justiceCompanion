@@ -22,7 +22,7 @@ const ProfileNavbar = () => {
                 style={{ heigth: "2rem", width: "2rem", borderRadius: "50%"}}
               >
                 <img
-        src = {JSON.parse(user.user).image === "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" ? JSON.parse(user.user).image : `http://localhost:5001/uploads/${JSON.parse(user.user).image}`}
+        src = {JSON.parse(user.user).image === "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" ? JSON.parse(user.user).image : `${process.env.REACT_APP_SERVER}/uploads/${JSON.parse(user.user).image}`}
         style={{ height: "2rem", width: "2rem", borderRadius: "50%" }}
                 />
               </div>

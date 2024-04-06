@@ -9,7 +9,7 @@ function Peerconnect() {
 	const [hasAccess, setHasAccess] = useState(false);
 	const checkAccess = async () => {
 		const userId = JSON.parse(user.user)._id;
-		fetch(`http://localhost:5001/api/v1/discord/hasAccess/${userId}`, {
+		fetch(`${process.env.REACT_APP_SERVER}/api/v1/discord/hasAccess/${userId}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",

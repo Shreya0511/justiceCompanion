@@ -7,7 +7,7 @@ function AddtoDiscord() {
 	const { user } = AuthData();
 	const userId = JSON.parse(user.user)._id;
 	const addToDiscord = async () => {
-		fetch(`http://localhost:5001/api/v1/discord/add/${userId}`, {
+		fetch(`${process.env.REACT_APP_SERVER}/api/v1/discord/add/${userId}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",

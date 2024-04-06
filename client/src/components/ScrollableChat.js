@@ -55,7 +55,7 @@ const ScrollableChat = ({ messages }) => {
 										m.sender.image ===
 										"https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
 											? m.sender.image
-											: `http://localhost:5001/uploads/${m.sender.image}`
+											: `${process.env.REACT_APP_SERVER}/uploads/${m.sender.image}`
 									}
 									roundedCircle
 								/>

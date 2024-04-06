@@ -68,7 +68,7 @@ function Register() {
 
       //   try {
       const response = await fetch(
-        "http://localhost:5001/api/v1/users/signup",
+        `${process.env.REACT_APP_SERVER}/api/v1/users/signup`,
         {
           method: "post",
           headers: {
@@ -98,7 +98,7 @@ function Register() {
     } else {
       try {
         const response = await fetch(
-          "http://localhost:5001/api/v1/users/signup",
+          `${process.env.REACT_APP_SERVER}/api/v1/users/signup`,
           {
             method: "post",
             headers: {

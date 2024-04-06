@@ -18,7 +18,7 @@ import VideoCallModal from "./miscellaneous/VideoCallModal";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-const ENDPOINT = "http://localhost:5001";
+const ENDPOINT = `${process.env.REACT_APP_SERVER}`;
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -47,7 +47,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://127.0.0.1:5001/api/v1/messages/${selectedChat._id}`,
+        `${process.env.REACT_APP_SERVER}/api/v1/messages/${selectedChat._id}`,
         config
       );
 
@@ -72,7 +72,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
         setNewMessages("");
         const { data } = await axios.post(
-          "http://127.0.0.1:5001/api/v1/messages",
+          `${process.env.REACT_APP_SERVER}/api/v1/messages`,
           {
             content: newMessages,
             chatId: selectedChat._id,
@@ -124,12 +124,36 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       {selectedChat ? (
         <>
           <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton style ={{cursor : "pointer"}}>
+            <Modal.Header closeButton style={{ cursor: "pointer" }}>
               <Modal.Title>{selectedChat.chatName}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <div style ={{color : "#C29879", marginBottom : "0.5rem", fontWeight: "medium", fontSize : "1.4rem"}}>Group Members</div>
-			  {selectedChat.users ? selectedChat.users .map((user) => (<div style ={{boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px", marginBottom : "1rem", padding : "1rem", borderRadius : "1rem"}}><span style ={{}}>{user.username} </span></div>)) : <></>}
+              <div
+                style={{
+                  color: "#C29879",
+                  marginBottom: "0.5rem",
+                  fontWeight: "medium",
+                  fontSize: "1.4rem",
+                }}
+              >
+                Group Members
+              </div>
+              {selectedChat.users ? (
+                selectedChat.users.map((user) => (
+                  <div
+                    style={{
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                      marginBottom: "1rem",
+                      padding: "1rem",
+                      borderRadius: "1rem",
+                    }}
+                  >
+                    <span style={{}}>{user.username} </span>
+                  </div>
+                ))
+              ) : (
+                <></>
+              )}
             </Modal.Body>
           </Modal>
           <div
@@ -155,7 +179,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                             JSON.parse(user.user).name,
                             selectedChat.users
                           ).image
-                        : `http://localhost:5001/uploads/${
+                        : `${process.env.REACT_APP_SERVER}/uploads/${
                             getSender(
                               JSON.parse(user.user).name,
                               selectedChat.users
@@ -182,7 +206,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 flex: "7",
                 alignItems: "flex-start",
                 justifyContent: "flex-start",
-				cursor : "pointer"
+                cursor: "pointer",
               }}
               onClick={handleShow}
             >

@@ -16,7 +16,7 @@ const ImageContainer = () => {
         width={171}
         height={180}
         alt="171x180"
-        src = {JSON.parse(user.user).image === "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" ? JSON.parse(user.user).image : `http://localhost:5001/uploads/${JSON.parse(user.user).image}`}
+        src = {JSON.parse(user.user).image === "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" ? JSON.parse(user.user).image : `${process.env.REACT_APP_SERVER}/uploads/${JSON.parse(user.user).image}`}
       />
         <Figure.Caption style ={{marginTop : "1rem", display : "flex", flexDirection: "column"}}>
           <div style = {{margin : "auto", fontSize: "1.5rem", fontWeight:"bold", color : "white"}}>{JSON.parse(user.user).name}</div>

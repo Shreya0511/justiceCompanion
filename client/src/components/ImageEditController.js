@@ -10,7 +10,6 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import getCookies from "../hooks/getCookies";
 
-
 const ImageContainer = () => {
   const [image, setImage] = useState("");
 
@@ -25,11 +24,10 @@ const ImageContainer = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", image);
- 
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5001/api/v1/users/updateProfileImage",
+        `${process.env.REACT_APP_SERVER}/api/v1/users/updateProfileImage`,
         {
           method: "PATCH",
           headers: {
@@ -41,7 +39,7 @@ const ImageContainer = () => {
             "Access-Control-Allow-Methods":
               "GET, HEAD, POST, PUT, DELETE,PATCH, OPTIONS",
           },
-          body: formData
+          body: formData,
         }
       )
         .then((response) => response.json())
@@ -61,7 +59,7 @@ const ImageContainer = () => {
       // setUser({ user: "", isAuthenticated: false });
       alert("Unable to Upload the profile image!! Please try again later.");
     }
-  }
+  };
 
   return (
     <div
@@ -95,8 +93,13 @@ const ImageContainer = () => {
           width={171}
           height={180}
           alt="171x180"
-          src = {JSON.parse(user.user).image === "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" ? JSON.parse(user.user).image : `http://localhost:5001/uploads/${JSON.parse(user.user).image}`}
-          />
+          src={
+            JSON.parse(user.user).image ===
+            "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+              ? JSON.parse(user.user).image
+              : `${process.env.REACT_APP_SERVER}/uploads/${JSON.parse(user.user).image}`
+          }
+        />
         <Figure.Caption
           style={{
             marginTop: "1rem",

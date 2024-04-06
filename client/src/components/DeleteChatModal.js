@@ -24,7 +24,7 @@ const DeleteChatModal = () => {
         },
       };
       const { data } = await axios.delete(
-        `http://127.0.0.1:5001/api/v1/chats/deleteGroup/${selectedChat._id}`,
+        `${process.env.REACT_APP_SERVER}/api/v1/chats/deleteGroup/${selectedChat._id}`,
         config
       );
 

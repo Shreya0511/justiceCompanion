@@ -184,16 +184,16 @@ const routes = [
 		isUtility: false,
 		icon: <FontAwesomeIcon icon={faStarOfDavid} />,
 	},
-	{
-		path: "/pastcases",
-		component: <Pastcases />,
-		name: "Past Cases",
-		isPrivate: true,
-		isMenuUser: true,
-		isMenuLawyer: true,
-		isUtility: false,
-		icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
-	},
+	// {
+	// 	path: "/pastcases",
+	// 	component: <Pastcases />,
+	// 	name: "Past Cases",
+	// 	isPrivate: true,
+	// 	isMenuUser: true,
+	// 	isMenuLawyer: true,
+	// 	isUtility: false,
+	// 	icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
+	// },
 
 	{
 		path: "/home",

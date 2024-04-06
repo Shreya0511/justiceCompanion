@@ -35,7 +35,7 @@ function ChatBot() {
 			userInput: message,
 		};
 
-		const response = await fetch("http://localhost:5500/user-input", {
+		const response = await fetch("https://justicecompanion-1.onrender.com/user-input", {
 			method: "post",
 			headers: {
 				"Content-Type": "application/json",
@@ -90,7 +90,7 @@ function ChatBot() {
 						<img
 							src={
 								entity === "user"
-									? `http://localhost:5001/uploads/${JSON.parse(user.user).image}`
+									? `${process.env.REACT_APP_SERVER}/uploads/${JSON.parse(user.user).image}`
 									: botChats[entity].icon
 							}
 							alt="bot-icon"

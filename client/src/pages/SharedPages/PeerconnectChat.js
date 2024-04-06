@@ -13,6 +13,7 @@ import { getUser } from "../../utilities/getUser";
 import io from "socket.io-client";
 import ChatMsg from "../../components/Discord/ChatMsg";
 import fetchDiscord from "../../components/Discord/getDiscord";
+import Toast from 'react-bootstrap/Toast';
 
 function PeerconnectChat() {
   const dummy = useRef(null);
@@ -26,7 +27,7 @@ function PeerconnectChat() {
   }, [usersChats, message]);
 
   const getMsgs = async () => {
-    fetch("http://localhost:5001/api/v1/discord/getMessages", {
+    fetch(`${process.env.REACT_APP_SERVER}/api/v1/discord/getMessages`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +56,7 @@ function PeerconnectChat() {
   }, []);
   var socket;
   useEffect(() => {
-    socket = io("http://localhost:5001");
+    socket = io(`${process.env.REACT_APP_SERVER}`);
     socket.emit("setup", {
       _id: JSON.parse(user.user)._id,
     });
@@ -81,7 +82,7 @@ function PeerconnectChat() {
     console.log("Message Received");
     newMessageReceived.chat = await fetchDiscord();
     console.log("after everything", newMessageReceived);
-    const socket = io("http://localhost:5001");
+    const socket = io(`${process.env.REACT_APP_SERVER}`);
     socket.emit("new message", newMessageReceived);
     getMsgs();
   };
@@ -99,6 +100,7 @@ function PeerconnectChat() {
       }
     );
     const result = await response.json();
+    console.log("result", result);
     return result;
   }
 
@@ -121,17 +123,21 @@ function PeerconnectChat() {
     try {
       console.log("hereeeeeeeeeeeeeee");
       const res = await queryAI(message);
+      console.log("res", res);
       // Assuming response contains the result of AI logic, you can decide what to do based on it
       const shouldSendMessage = res.scores[0]; // Adjust this condition as per your logic
-      if (shouldSendMessage >= 0.7) {
-        alert("Message contains sensitive information!!🤷‍♀️ Please avoid sending confidential information through this platform. This platform is just for formal discussions.");
-        return;
+      if (shouldSendMessage >= 0.6) {
+        alert(
+          "Message contains sensitive information!!🤷‍♀️ Please avoid sending confidential information through this platform. This platform is just for formal discussions."
+        );
+
+        return
       }
     } catch (error) {
       console.error("Error running AI logic:", error);
     }
 
-    await fetch("http://localhost:5001/api/v1/discord/sendMessage", {
+    await fetch(`${process.env.REACT_APP_SERVER}/api/v1/discord/sendMessage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -39,12 +39,12 @@ const SideDrawer = () => {
         jwt: getCookies("jwt"),
       };
       const response = await fetch(
-        `http://127.0.0.1:5001/api/v1/chats/getChats?search=${search}`,
+        `${process.env.REACT_APP_SERVER}/api/v1/chats/getChats?search=${search}`,
         {
           method: "get",
           headers: {
             "Content-Type": "application/json",
-            "authorization" : `Bearer ${getCookies("jwt")}`
+            authorization: `Bearer ${getCookies("jwt")}`,
           },
         }
       )
@@ -55,7 +55,6 @@ const SideDrawer = () => {
           setChatLoading(false);
         });
     } catch (error) {
-
       alert("Oops....No Chat Rooms Found!!");
       console.log(error);
     }
@@ -73,7 +72,7 @@ const SideDrawer = () => {
       };
 
       const { data } = await axios.post(
-        "http://127.0.0.1:5001/api/v1/chats",
+        `${process.env.REACT_APP_SERVER}/api/v1/chats`,
         { userId },
         config
       );
@@ -95,51 +94,78 @@ const SideDrawer = () => {
 
   return (
     <>
-      <div className="SidedrawerButton" onClick={handleShow} style ={{paddingLeft : "2rem", paddingRight : "2rem"}}>
+      <div
+        className="SidedrawerButton"
+        onClick={handleShow}
+        style={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+      >
         <FontAwesomeIcon icon={faMagnifyingGlass} />{" "}
         <div style={{ marginLeft: "0.6rem" }}>Search Rooms</div>
       </div>
 
       <Offcanvas show={show} onHide={handleClose} className="mb-0">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title style ={{display : "flex", margin: "auto", marginTop : "1rem", fontWeight: "bold", color : "chocolate"}}>Search Rooms</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body >
-          <div style ={{marginBottom : "2rem"}}>
-          <input
-            placeholder="Search by room name"
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
+          <Offcanvas.Title
+            style={{
+              display: "flex",
+              margin: "auto",
+              marginTop: "1rem",
+              fontWeight: "bold",
+              color: "chocolate",
             }}
-            style ={{marginBottom : "0px", marginRight: "1rem", height : "2.1rem", borderRadius: "0.3rem", padding: "0.3rem"}}
-          />
-          <Button variant="outline-secondary" onClick={handleSearch} style ={{marginBottom : "0px", backgroundColor : "#f3cbae", color : ""}}>
-            Search
-          </Button>
-          </div>
-        {loading ? (
-          <ChatLoading />
-        ) : (
-          searchResult?.map((chat) => (
-            <>
-            <ChatListItem
-            key={chat._id}
-            chat={chat}
-            style ={{marginTop : "10rem"}}
+          >
+            Search Rooms
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <div style={{ marginBottom: "2rem" }}>
+            <input
+              placeholder="Search by room name"
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+              style={{
+                marginBottom: "0px",
+                marginRight: "1rem",
+                height: "2.1rem",
+                borderRadius: "0.3rem",
+                padding: "0.3rem",
+              }}
             />
-            </>
-          ))
-        )}
+            <Button
+              variant="outline-secondary"
+              onClick={handleSearch}
+              style={{
+                marginBottom: "0px",
+                backgroundColor: "#f3cbae",
+                color: "",
+              }}
+            >
+              Search
+            </Button>
+          </div>
+          {loading ? (
+            <ChatLoading />
+          ) : (
+            searchResult?.map((chat) => (
+              <>
+                <ChatListItem
+                  key={chat._id}
+                  chat={chat}
+                  style={{ marginTop: "10rem" }}
+                />
+              </>
+            ))
+          )}
 
-        {chatLoading && (
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        )}
-      </Offcanvas.Body>
+          {chatLoading && (
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          )}
+        </Offcanvas.Body>
       </Offcanvas>
-
     </>
   );
 };

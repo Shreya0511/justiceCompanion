@@ -9,7 +9,7 @@ function ChatMsg(props) {
 				<div className={"chat-message---"}>
 					<div className="chat-icon-container">
 						<img
-							src={`http://localhost:5001/uploads/${chatMsg.sender.image}`}
+							src={`${process.env.REACT_APP_SERVER}/uploads/${chatMsg.sender.image}`}
 							alt="chat-icon"
 							className="chat-icon--"
 						/>
@@ -50,7 +50,7 @@ function ChatMsg(props) {
 					</div>
 					<div className="chat-icon-container">
 						<img
-							src={`http://localhost:5001/uploads/${chatMsg.sender.image}`}
+							src={`${process.env.REACT_APP_SERVER}/uploads/${chatMsg.sender.image}`}
 							alt="chat-icon"
 							className="chat-icon--"
 						/>
